@@ -5,14 +5,14 @@ from setuptools import setup, find_packages  # prefer setuptools over distutils
 
 # Get the long description from the README file
 PATH = path.abspath(path.dirname(__file__))
-with codecs.open(path.join(PATH, 'README.rst'), encoding='utf-8') as f:
-    LONG_DESCRIPTION = f.read()
+# with codecs.open(path.join(PATH, 'README.rst'), encoding='utf-8') as f:
+#     LONG_DESCRIPTION = f.read()
 
 setup(
     name='django-experiments',
     version='1.2.1',
     description='Python Django AB Testing Framework',
-    long_description=LONG_DESCRIPTION,
+    long_description='',
     author='Mixcloud',
     author_email='technical@mixcloud.com',
     url='https://github.com/mixcloud/django-experiments',
