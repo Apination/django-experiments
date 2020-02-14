@@ -1,4 +1,4 @@
-import codecs  # to use a consistent encoding
+# import codecs  # to use a consistent encoding
 from os import path
 from setuptools import setup, find_packages  # prefer setuptools over distutils
 
