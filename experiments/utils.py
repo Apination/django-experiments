@@ -36,12 +36,15 @@ def clear_participant_cache(request):
 
 
 def _get_participant(request, session, user):
+    from django.contrib.auth.models import AnonymousUser
     if request and hasattr(request, 'user') and not user:
         user = request.user
     if request and hasattr(request, 'session') and not session:
         session = request.session
 
     if request and conf.BOT_REGEX.search(request.META.get("HTTP_USER_AGENT", "")):
+        return DummyUser()
+    elif user and isinstance(user, AnonymousUser):
         return DummyUser()
     elif user and user.is_authenticated:
         if getattr(user, 'is_confirmed_human', True):
